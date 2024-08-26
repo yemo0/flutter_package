@@ -6,7 +6,7 @@
 ```yaml
 dependencies:
  package_name:
-    git: https://github.com/yemo0/flutter_package
+  git: https://github.com/yemo0/flutter_package
     path: flutter_package/package_name
 ```
 

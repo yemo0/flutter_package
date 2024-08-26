@@ -32,7 +32,7 @@ class SqliteCRUD {
     return res;
   }
 
-  static Future<int> updateByIDorUUID<T extends SqliteCRUDModel>(String tableName, T t, int id) async {
+  static Future<int> updateByID<T extends SqliteCRUDModel>(String tableName, T t, int id) async {
     final db = await SqliteDBConn().getDB();
     // remove id
     final json = t.toJson();
