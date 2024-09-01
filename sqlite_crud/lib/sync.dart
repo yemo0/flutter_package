@@ -77,7 +77,7 @@ class SqliteSyncData<T extends SqliteSyncModel> {
     final db = await SqliteDBConn().getDB();
     List<T> queryData = await SqliteCRUD.query(tableName, t,
         where: "is_synced = ?", whereArgs: [0], orderBy: "updated_at ASC", limit: 20);
-    final res =  await post(syncUpdateUrl, jsonEncode(queryData));
+    final res = await post(syncUpdateUrl, jsonEncode(queryData));
 
     // 使用server返回的数据 更新本地
     final data = res['data'] as List;
