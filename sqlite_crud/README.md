@@ -6,6 +6,7 @@ import `sqlite_crud`
 
 ### Initialize the database
 ```dart
+  WidgetsFlutterBinding.ensureInitialized();
   await SqliteDBConn().init("demo.db", [DBConfig.createTableSqlData]);
   // demo.db -> String dbPathName,
   // DBConfig.createTableSqlData -> List<String> createTableSql
