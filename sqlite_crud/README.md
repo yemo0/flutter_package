@@ -3,6 +3,13 @@ A fast sqlite CRUD package, based on sqflite
 
 ## Getting Started 
 import `sqlite_crud`
+```yaml
+sqlite_crud:
+    git: 
+      url: https://github.com/yemo0/flutter_package.git
+      path: sqlite_crud
+      ref: main
+```
 
 ### Initialize the database
 ```dart
