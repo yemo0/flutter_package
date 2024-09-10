@@ -12,4 +12,6 @@ dependencies:
 
 ## Package list
 - sqlite_crud
-    - A fast sqlite CRUD package, based on sqflite
+  - A fast sqlite CRUD package, based on sqflite
+- theme_provider
+  - Dark mode and Color Management
