@@ -1,17 +1,21 @@
 # sqlite_crud
+
 A fast sqlite CRUD package, based on sqflite
 
-## Getting Started 
+## Getting Started
+
 import `sqlite_crud`
+
 ```yaml
 sqlite_crud:
-    git: 
-      url: https://github.com/yemo0/flutter_package.git
-      path: sqlite_crud
-      ref: main
+  git:
+    url: https://github.com/yemo0/flutter_package.git
+    path: sqlite_crud
+    ref: main
 ```
 
 ### Initialize the database
+
 ```dart
   WidgetsFlutterBinding.ensureInitialized();
   await SqliteDBConn().init("demo.db", [DBConfig.createTableSqlData]);
@@ -20,15 +24,17 @@ sqlite_crud:
 ```
 
 ### CRUD
+
 model `user_model.dart` using `freezed`
 **Must implement the SqliteCRUDModel class**
+
 ```dart
 @freezed
 class UserModel with _$UserModel implements SqliteCRUDModel {
   const UserModel._();
   const factory UserModel({ String? name, int? age}) = _UserModel;
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
-  
+
   @override
   SqliteCRUDModel fromJson(Map<String, dynamic> json) {
     return UserModel.fromJson(json);
@@ -37,7 +43,7 @@ class UserModel with _$UserModel implements SqliteCRUDModel {
 ```
 
 ```dart
-// insert 
+// insert
 SqliteCRUD.insert("users",  UserModel(name: name.text, age: int.parse(age.text)));
 // update
 SqliteCRUD.updateByID("users",  UserModel(age: int.parse(age.text)), int.parse(id.text));
@@ -48,8 +54,10 @@ SqliteCRUD.query("users", const UserModel(), where: "id = 1", limit: 1, ....);
 ```
 
 ## Sync
+
 model `user_model.dart` using `freezed`
 **Must implement the SqliteSyncModel class**
+
 ```dart
 SqliteSyncData<UserModel>.syncLastTime()
 SqliteSyncData<UserModel>.syncUpdate()
