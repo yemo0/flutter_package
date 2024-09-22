@@ -2,7 +2,6 @@
 import 'dart:convert';
 
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:sqlite_crud/src/kv_store.dart';
 import 'package:sqlite_crud/sqlite_crud.dart';
 
 abstract class SqliteSyncModel<T> implements SqliteCRUDModel {

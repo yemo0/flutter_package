@@ -91,7 +91,7 @@ class ModelConvert {
         map[key] = value == true ? 1 : 0;
         return;
       }
-      if (key.endsWith("At") || key.endsWith("at")) {
+      if (key.endsWith("at")) {
         map[key] = DateTime.parse(value).toUtc().toIso8601String();
         return;
       }
@@ -108,10 +108,6 @@ class ModelConvert {
         map[key] = value == 1;
         return;
       }
-      // if (key.endsWith("At") || key.endsWith("at")) {
-      //   map[key] = value;
-      //   return;
-      // }
       map[key] = value;
     });
     return map;
