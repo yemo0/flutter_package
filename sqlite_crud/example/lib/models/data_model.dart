@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sqlite_crud/sync.dart';
+import 'package:sqlite_crud/sqlite_crud.dart';
 
 part 'data_model.freezed.dart';
 part 'data_model.g.dart';

@@ -1,5 +1,5 @@
 // 2024-08-07 03:05:22
-import 'package:sqlite_crud/conn.dart';
+import 'package:sqlite_crud/src/conn.dart';
 
 abstract class SqliteCRUDModel {
   Map<String, dynamic> toJson();
@@ -46,7 +46,8 @@ class SqliteCRUD {
     // remove uuid
     final json = t.toJson();
     json.remove("uuid");
-    final res = await db.update(tableName, ModelConvert.modelToSqlite(t.toJson()), where: "uuid = ?", whereArgs: [uuid]);
+    final res =
+        await db.update(tableName, ModelConvert.modelToSqlite(t.toJson()), where: "uuid = ?", whereArgs: [uuid]);
     return res;
   }
 
@@ -100,7 +101,6 @@ class ModelConvert {
   }
 
   static Map<String, dynamic> sqliteToModel(Map<String, dynamic> data) {
-
     final map = <String, dynamic>{};
     data.forEach((key, value) {
       if (value == null) return;

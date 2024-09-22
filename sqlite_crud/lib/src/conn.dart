@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:path/path.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:sqlite_crud/kv_store.dart';
+import 'package:sqlite_crud/src/kv_store.dart';
 
 class SqliteDBConn {
   static final SqliteDBConn _instance = SqliteDBConn._internal();
@@ -25,7 +25,8 @@ class SqliteDBConn {
     return _database!;
   }
 
-  Future<Database> _initDatabase(String dbPathName, List createTableSql, {int version = 1, bool needKVStore = true}) async {
+  Future<Database> _initDatabase(String dbPathName, List createTableSql,
+      {int version = 1, bool needKVStore = true}) async {
     // desktop
     if (Platform.isWindows || Platform.isLinux) {
       // Initialize FFI

@@ -5,7 +5,7 @@ import 'package:example/utils/extension.dart';
 import 'package:example/utils/http.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sqlite_crud/sync.dart';
+import 'package:sqlite_crud/sqlite_crud.dart';
 import 'package:uuid/uuid.dart';
 
 import '../viewmodel/home/home_list_viewmodel.dart';
@@ -23,7 +23,7 @@ class HomeBottomState extends ConsumerState<HomeBottom> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       sync();
-    ref.read(homeListViewModelProvider.notifier).getData();
+      ref.read(homeListViewModelProvider.notifier).getData();
     });
   }
 

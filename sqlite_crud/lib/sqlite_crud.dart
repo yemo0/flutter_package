@@ -1,5 +1,6 @@
 library sqlite_crud;
 
-export './conn.dart';
-export './crud.dart';
-export './sync.dart';
+export 'src/conn.dart';
+export 'src/crud.dart';
+export 'src/sync.dart';
+export 'src/kv_store.dart';

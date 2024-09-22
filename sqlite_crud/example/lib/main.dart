@@ -1,8 +1,7 @@
-
 import 'package:example/data/sqlite/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sqlite_crud/conn.dart';
+import 'package:sqlite_crud/sqlite_crud.dart';
 
 import 'utils/routers.dart';
 import 'viewmodel/theme/theme_viewmodel.dart';
@@ -26,4 +25,3 @@ class MyApp extends ConsumerWidget {
     );
   }
 }
-

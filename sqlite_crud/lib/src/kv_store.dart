@@ -1,5 +1,5 @@
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:sqlite_crud/conn.dart';
+import 'package:sqlite_crud/src/conn.dart';
 
 class KVStore {
   // db table name

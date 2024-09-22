@@ -1,7 +1,7 @@
 import 'package:example/data/sqlite/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sqlite_crud/sync.dart';
+import 'package:sqlite_crud/sqlite_crud.dart';
 
 import '../../models/data_model.dart';
 

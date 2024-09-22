@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:sqlite_crud/kv_store.dart';
+import 'package:sqlite_crud/src/kv_store.dart';
 import 'package:sqlite_crud/sqlite_crud.dart';
 
 abstract class SqliteSyncModel<T> implements SqliteCRUDModel {
@@ -52,7 +52,8 @@ class SqliteSyncData<T extends SqliteSyncModel> {
     // 使用server数据和client数据进行对比判断是否需要更新
     final List<Map<String, dynamic>> localData =
         await db.rawQuery("SELECT * FROM $tableName WHERE uuid IN ($uuidListString)");
-    final List<T> localDataList = List.generate(localData.length, (index) =>t.fromJson( ModelConvert.sqliteToModel(localData[index])) as T);
+    final List<T> localDataList =
+        List.generate(localData.length, (index) => t.fromJson(ModelConvert.sqliteToModel(localData[index])) as T);
 
     for (var e in data) {
       final creentData = localDataList.firstWhere((element) => element.uuid == e.uuid, orElse: () => t);
