@@ -59,7 +59,7 @@ class _CountryListViewState extends State<CountryListView> {
                       hintText: "Search",
                       contentPadding: const EdgeInsets.all(5),
                       filled: true,
-                      fillColor: const Color(0xFFD9D9D9),
+                      fillColor: const Color(0xFfbfbfbf),
                     ),
                     onChanged: _searchChanged,
                   ),
