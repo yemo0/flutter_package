@@ -1,4 +1,5 @@
 import 'package:country_picker/src/country_code_model.dart';
+import 'package:country_picker/src/utils.dart';
 import 'res/country_codes.dart';
 
 class CountryPicker {
@@ -13,5 +14,9 @@ class CountryPicker {
     return countryCodesList.where((element) {
       return element.displayName != null && element.displayName!.toLowerCase().contains(lowerCaseQuery);
     }).toList();
+  }
+
+  static String getFlagEmoji(String code) {
+    return Utils.countryCodeToEmoji(code);
   }
 }
