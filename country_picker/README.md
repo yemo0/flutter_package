@@ -14,6 +14,17 @@ country_picker:
     ref: main
 ```
 
+Example:
+
+```dart
+showCountryPicker(
+  context: context,
+  onSelect: (value) {
+    print(value.displayName);
+  },
+);
+```
+
 ## bug
 
 - Search box height on windows
