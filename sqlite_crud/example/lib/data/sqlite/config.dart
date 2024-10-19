@@ -5,7 +5,7 @@ class DBConfig {
   // db table name
   static const data = 'data';
   // db crate table
-  static const createTableSqlData = '''CREATE TABLE $data (
+  static const createTableSqlData = '''CREATE TABLE IF NOT EXISTS $data (
 uuid TEXT PRIMARY KEY,
 content TEXT,
 updated_at TEXT,
@@ -19,7 +19,7 @@ is_synced INTEGER DEFAULT 0
   // db table name
   static const kvStore = 'kv_store';
   // create kv_store table
-  static const createTableKVStore = '''CREATE TABLE $kvStore (
+  static const createTableKVStore = '''CREATE TABLE IF NOT EXISTS $kvStore (
 key TEXT PRIMARY KEY,
 value TEXT
 );

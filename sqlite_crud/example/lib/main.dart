@@ -8,7 +8,7 @@ import 'viewmodel/theme/theme_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SqliteDBConn().init("demo.db", [DBConfig.createTableSqlData]);
+  await SqliteDBConn().init("demo.db", [CreateTableModel(DBConfig.data, DBConfig.createTableSqlData)]);
   runApp(const ProviderScope(child: MyApp()));
 }
 

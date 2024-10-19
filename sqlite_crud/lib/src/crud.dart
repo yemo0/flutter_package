@@ -79,6 +79,19 @@ class SqliteCRUD {
     }
     return List.generate(maps.length, (index) => t.fromJson(ModelConvert.sqliteToModel(maps[index])) as T);
   }
+
+  static clearTable(String tableName) async {
+    final db = await SqliteDBConn().getDB();
+    await db.execute("DELETE FROM $tableName");
+  }
+
+  static clearTableAndResetId(String tableName) async {
+    final db = await SqliteDBConn().getDB();
+    await db.transaction((txn) async {
+      await txn.execute('DELETE FROM $tableName');
+      await txn.execute('DELETE FROM sqlite_sequence WHERE name="$tableName"');
+    });
+  }
 }
 
 // sqlite type conversion

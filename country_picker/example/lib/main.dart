@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
             showCountryPicker(
               context: context,
               onSelect: (value) {
-                print(value.displayName);
+                print(CountryPicker.getFlagEmoji('CN'));
               },
             );
           },
