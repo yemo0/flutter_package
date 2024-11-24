@@ -15,10 +15,12 @@ class Http {
   }
 
   Future<dynamic> post(String url, Object? data) async {
-    Response res = await _dio!.post(url, data: data);
-    print(res);
-    print(data);
-    return Future.value(res.data);
+    try {
+      Response res = await _dio!.post(url, data: data);
+      return Future.value(res.data);
+    } catch (e) {
+      print(e);
+    }
   }
 
   Dio createDio() {

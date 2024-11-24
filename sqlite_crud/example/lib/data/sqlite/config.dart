@@ -8,9 +8,8 @@ class DBConfig {
   static const createTableSqlData = '''CREATE TABLE IF NOT EXISTS $data (
 uuid TEXT PRIMARY KEY,
 content TEXT,
-updated_at TEXT,
-created_at TEXT,
-server_updated_at TEXT,
+u_at TEXT,
+c_at TEXT,
 is_deleted INTEGER DEFAULT 0,
 is_synced INTEGER DEFAULT 0
 );

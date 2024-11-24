@@ -20,14 +20,12 @@ DataModel _$DataModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DataModel {
-  String? get uuid => throw _privateConstructorUsedError;
   String? get content => throw _privateConstructorUsedError;
-  @JsonKey(name: 'updated_at')
+  String? get uuid => throw _privateConstructorUsedError;
+  @JsonKey(name: 'u_at')
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'created_at')
+  @JsonKey(name: 'c_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'server_updated_at')
-  DateTime? get serverUpdatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_deleted')
   bool? get isDeleted => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_synced')
@@ -49,11 +47,10 @@ abstract class $DataModelCopyWith<$Res> {
       _$DataModelCopyWithImpl<$Res, DataModel>;
   @useResult
   $Res call(
-      {String? uuid,
-      String? content,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt,
-      @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'server_updated_at') DateTime? serverUpdatedAt,
+      {String? content,
+      String? uuid,
+      @JsonKey(name: 'u_at') DateTime? updatedAt,
+      @JsonKey(name: 'c_at') DateTime? createdAt,
       @JsonKey(name: 'is_deleted') bool? isDeleted,
       @JsonKey(name: 'is_synced') bool? isSynced});
 }
@@ -73,22 +70,21 @@ class _$DataModelCopyWithImpl<$Res, $Val extends DataModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uuid = freezed,
     Object? content = freezed,
+    Object? uuid = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = freezed,
-    Object? serverUpdatedAt = freezed,
     Object? isDeleted = freezed,
     Object? isSynced = freezed,
   }) {
     return _then(_value.copyWith(
-      uuid: freezed == uuid
-          ? _value.uuid
-          : uuid // ignore: cast_nullable_to_non_nullable
-              as String?,
       content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
+              as String?,
+      uuid: freezed == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
@@ -97,10 +93,6 @@ class _$DataModelCopyWithImpl<$Res, $Val extends DataModel>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      serverUpdatedAt: freezed == serverUpdatedAt
-          ? _value.serverUpdatedAt
-          : serverUpdatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       isDeleted: freezed == isDeleted
           ? _value.isDeleted
@@ -123,11 +115,10 @@ abstract class _$$DataModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? uuid,
-      String? content,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt,
-      @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'server_updated_at') DateTime? serverUpdatedAt,
+      {String? content,
+      String? uuid,
+      @JsonKey(name: 'u_at') DateTime? updatedAt,
+      @JsonKey(name: 'c_at') DateTime? createdAt,
       @JsonKey(name: 'is_deleted') bool? isDeleted,
       @JsonKey(name: 'is_synced') bool? isSynced});
 }
@@ -145,22 +136,21 @@ class __$$DataModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uuid = freezed,
     Object? content = freezed,
+    Object? uuid = freezed,
     Object? updatedAt = freezed,
     Object? createdAt = freezed,
-    Object? serverUpdatedAt = freezed,
     Object? isDeleted = freezed,
     Object? isSynced = freezed,
   }) {
     return _then(_$DataModelImpl(
-      uuid: freezed == uuid
-          ? _value.uuid
-          : uuid // ignore: cast_nullable_to_non_nullable
-              as String?,
       content: freezed == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
+              as String?,
+      uuid: freezed == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String?,
       updatedAt: freezed == updatedAt
           ? _value.updatedAt
@@ -169,10 +159,6 @@ class __$$DataModelImplCopyWithImpl<$Res>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      serverUpdatedAt: freezed == serverUpdatedAt
-          ? _value.serverUpdatedAt
-          : serverUpdatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       isDeleted: freezed == isDeleted
           ? _value.isDeleted
@@ -190,11 +176,10 @@ class __$$DataModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DataModelImpl extends _DataModel {
   const _$DataModelImpl(
-      {this.uuid,
-      this.content,
-      @JsonKey(name: 'updated_at') this.updatedAt,
-      @JsonKey(name: 'created_at') this.createdAt,
-      @JsonKey(name: 'server_updated_at') this.serverUpdatedAt,
+      {this.content,
+      this.uuid,
+      @JsonKey(name: 'u_at') this.updatedAt,
+      @JsonKey(name: 'c_at') this.createdAt,
       @JsonKey(name: 'is_deleted') this.isDeleted,
       @JsonKey(name: 'is_synced') this.isSynced})
       : super._();
@@ -203,18 +188,15 @@ class _$DataModelImpl extends _DataModel {
       _$$DataModelImplFromJson(json);
 
   @override
-  final String? uuid;
-  @override
   final String? content;
   @override
-  @JsonKey(name: 'updated_at')
+  final String? uuid;
+  @override
+  @JsonKey(name: 'u_at')
   final DateTime? updatedAt;
   @override
-  @JsonKey(name: 'created_at')
+  @JsonKey(name: 'c_at')
   final DateTime? createdAt;
-  @override
-  @JsonKey(name: 'server_updated_at')
-  final DateTime? serverUpdatedAt;
   @override
   @JsonKey(name: 'is_deleted')
   final bool? isDeleted;
@@ -224,7 +206,7 @@ class _$DataModelImpl extends _DataModel {
 
   @override
   String toString() {
-    return 'DataModel(uuid: $uuid, content: $content, updatedAt: $updatedAt, createdAt: $createdAt, serverUpdatedAt: $serverUpdatedAt, isDeleted: $isDeleted, isSynced: $isSynced)';
+    return 'DataModel(content: $content, uuid: $uuid, updatedAt: $updatedAt, createdAt: $createdAt, isDeleted: $isDeleted, isSynced: $isSynced)';
   }
 
   @override
@@ -232,14 +214,12 @@ class _$DataModelImpl extends _DataModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataModelImpl &&
-            (identical(other.uuid, uuid) || other.uuid == uuid) &&
             (identical(other.content, content) || other.content == content) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.serverUpdatedAt, serverUpdatedAt) ||
-                other.serverUpdatedAt == serverUpdatedAt) &&
             (identical(other.isDeleted, isDeleted) ||
                 other.isDeleted == isDeleted) &&
             (identical(other.isSynced, isSynced) ||
@@ -248,8 +228,8 @@ class _$DataModelImpl extends _DataModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, uuid, content, updatedAt,
-      createdAt, serverUpdatedAt, isDeleted, isSynced);
+  int get hashCode => Object.hash(
+      runtimeType, content, uuid, updatedAt, createdAt, isDeleted, isSynced);
 
   /// Create a copy of DataModel
   /// with the given fields replaced by the non-null parameter values.
@@ -269,11 +249,10 @@ class _$DataModelImpl extends _DataModel {
 
 abstract class _DataModel extends DataModel {
   const factory _DataModel(
-      {final String? uuid,
-      final String? content,
-      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
-      @JsonKey(name: 'created_at') final DateTime? createdAt,
-      @JsonKey(name: 'server_updated_at') final DateTime? serverUpdatedAt,
+      {final String? content,
+      final String? uuid,
+      @JsonKey(name: 'u_at') final DateTime? updatedAt,
+      @JsonKey(name: 'c_at') final DateTime? createdAt,
       @JsonKey(name: 'is_deleted') final bool? isDeleted,
       @JsonKey(name: 'is_synced') final bool? isSynced}) = _$DataModelImpl;
   const _DataModel._() : super._();
@@ -282,18 +261,15 @@ abstract class _DataModel extends DataModel {
       _$DataModelImpl.fromJson;
 
   @override
-  String? get uuid;
-  @override
   String? get content;
   @override
-  @JsonKey(name: 'updated_at')
+  String? get uuid;
+  @override
+  @JsonKey(name: 'u_at')
   DateTime? get updatedAt;
   @override
-  @JsonKey(name: 'created_at')
+  @JsonKey(name: 'c_at')
   DateTime? get createdAt;
-  @override
-  @JsonKey(name: 'server_updated_at')
-  DateTime? get serverUpdatedAt;
   @override
   @JsonKey(name: 'is_deleted')
   bool? get isDeleted;

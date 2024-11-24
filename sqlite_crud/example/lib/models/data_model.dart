@@ -12,9 +12,8 @@ class DataModel with _$DataModel implements SqliteSyncModel<DataModel> {
   const factory DataModel({
     String? content,
     String? uuid,
-    @JsonKey(name: 'updated_at') DateTime? updatedAt,
-    @JsonKey(name: 'created_at') DateTime? createdAt,
-    @JsonKey(name: 'server_updated_at') DateTime? serverUpdatedAt,
+    @JsonKey(name: 'u_at') DateTime? updatedAt,
+    @JsonKey(name: 'c_at') DateTime? createdAt,
     @JsonKey(name: 'is_deleted') bool? isDeleted,
     @JsonKey(name: 'is_synced') bool? isSynced,
   }) = _DataModel;

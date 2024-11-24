@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:example/data/sqlite/config.dart';
 import 'package:example/models/data_model.dart';
 import 'package:example/utils/config.dart';
@@ -43,6 +45,7 @@ class HomeBottomState extends ConsumerState<HomeBottom> {
   @override
   Widget build(BuildContext context) {
     final homeListNotif = ref.read(homeListViewModelProvider.notifier);
+    final homeListState = ref.watch(homeListViewModelProvider);
 
     return SizedBox(
       // height: 200,
@@ -75,6 +78,11 @@ class HomeBottomState extends ConsumerState<HomeBottom> {
                   ),
                 ),
               )
+            ],
+          ),
+          Column(
+            children: [
+              Text("Synced Count: ${homeListState.length}"),
             ],
           ),
           Column(

@@ -49,4 +49,9 @@ class HomeListViewModel extends _$HomeListViewModel {
       getData();
     }
   }
+
+  Future<int> syncedCount() async {
+    DBHelper helper = DBHelper();
+    return await helper.getSyncedCount();
+  }
 }
