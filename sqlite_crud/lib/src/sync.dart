@@ -15,7 +15,7 @@ abstract class SqliteSyncModel<T> implements SqliteCRUDModel {
   get copyWith;
 }
 
-class SqliteSyncData<T extends SqliteSyncModel> {
+class SqliteSyncData<T extends SqliteSyncModel2> {
   T t;
   SqliteSyncData(this.t);
 
@@ -113,6 +113,7 @@ class SqliteSyncData<T extends SqliteSyncModel> {
 }
 
 class SyncOption {
+<<<<<<< HEAD
   static T insert<T extends SqliteSyncModel>(T t) {
     return t.copyWith(uuid: const Uuid().v7(), updatedAt: DateTime.now(), isSynced: false, createdAt: DateTime.now());
   }
@@ -122,6 +123,17 @@ class SyncOption {
   }
 
   static T update<T extends SqliteSyncModel>(T t) {
+=======
+  static T insert<T extends SqliteSyncModel2>(T t) {
+    return t.copyWith(uuid: const Uuid().v7(), updatedAt: DateTime.now(), isSynced: false, createdAt: DateTime.now());
+  }
+
+  static T delete<T extends SqliteSyncModel2>(T t) {
+    return t.copyWith(updatedAt: DateTime.now(), isSynced: false, isDeleted: true);
+  }
+
+  static T update<T extends SqliteSyncModel2>(T t) {
+>>>>>>> ae0a301139d7307a660458cc8e995d72b8d9ed22
     return t.copyWith(updatedAt: DateTime.now(), isSynced: false);
   }
 }
