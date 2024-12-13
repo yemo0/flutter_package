@@ -1,42 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:nui/nui.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const NTabBar(tabs: [Text('Tab 1'), Text('Tab 2'), Text('Tab 3')]),
+    return LazyListview(
+      loadMore: () async {
+        print('load more');
+        await Future.delayed(const Duration(seconds: 2));
+      },
+      itemBuilder: (context, index) => Container(
+        height: 100,
+        color: Colors.red,
+        child: Text(index.toString()),
+      ),
+      itemCount: 5,
     );
-  }
-}
-
-class NTabBar extends StatefulWidget {
-  final List<Widget> tabs;
-  const NTabBar({super.key, required this.tabs});
-
-  @override
-  State<StatefulWidget> createState() => NTabBarState();
-}
-
-class NTabBarState extends State<NTabBar> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 3, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return TabBar(controller: _tabController, tabs: widget.tabs);
   }
 }
