@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class LazyListview extends StatefulWidget {
+class NLazyListview extends StatefulWidget {
   final Function? loadMore;
   final Widget? Function(BuildContext, int) itemBuilder;
   final int? itemCount;
-  const LazyListview({super.key, required this.loadMore, required this.itemBuilder, this.itemCount});
+  const NLazyListview({super.key, required this.loadMore, required this.itemBuilder, this.itemCount});
 
   @override
   State<StatefulWidget> createState() => _LazyListviewState();
 }
 
-class _LazyListviewState extends State<LazyListview> {
+class _LazyListviewState extends State<NLazyListview> {
   final ScrollController _scrollController = ScrollController();
   bool _isLoading = false;
 

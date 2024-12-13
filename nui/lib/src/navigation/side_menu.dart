@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SideMenuModel {
+class NSideMenuModel {
   IconData iconData;
   String title;
-  SideMenuModel({required this.iconData, required this.title});
+  NSideMenuModel({required this.iconData, required this.title});
 }
 
 class SideMenu extends StatefulWidget {
-  final List<SideMenuModel> menuItems;
+  final List<NSideMenuModel> menuItems;
   final Function(int index) onChange;
   const SideMenu({super.key, required this.menuItems, required this.onChange});
 
