@@ -20,3 +20,5 @@ dependencies:
   - Dark mode and Color Management
 - country_picker
   - select a country from a list of countries
+- nui
+  - nui is a UI library for Flutter
